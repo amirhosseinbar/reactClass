@@ -1,0 +1,21 @@
+.menuWrapper {
+  /* background-color: whitesmoke; */
+  padding: 20px;
+}
+.menuItems {
+  font-size: 14px;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  border: 0.5px solid gray;
+  border-radius: 10px;
+  margin: 0 10px;
+}
+.menuItems:hover {
+    transition: 0.3s;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border: 0.5px solid rgb(0, 66, 189);
+    color: rgb(0, 66, 189);
+    
+}

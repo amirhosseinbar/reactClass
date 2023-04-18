@@ -1,0 +1,9 @@
+.svgStar1 {
+  fill: black;
+}
+.svgStar1:hover {
+  fill: red;
+}
+.svgStar2 {
+  fill: gold;
+}

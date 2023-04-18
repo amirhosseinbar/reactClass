@@ -1,0 +1,45 @@
+/* Rick and Morty Css */
+.searchBoxWrapper {
+  display: flex;
+  margin: 25px 0;
+  width: 100%;
+  justify-content: center;
+}
+.searchInput {
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  border: 0.5px solid gray;
+  width: 300px;
+}
+
+.charWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.charCard {
+  margin: 30px 25px;
+}
+
+.charImg {
+  width: 160px;
+  border-radius: 15px;
+  transition: ease 0.3s;
+}
+.charImg:hover {
+  width: 250px;
+  transition: ease 0.3s;
+  border-radius: 15px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 55px;
+}
+.loadingSection{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
