@@ -68,6 +68,9 @@ export default function RickAndMorty() {
   return (
     <>
       <FixHeader />
+      <div className={style.titleWrapper}>
+        <h1>Rick and Morty Characters</h1>
+      </div>
       <div className={style.searchBoxWrapper}>
         <input
           className={style.searchInput}

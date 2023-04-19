@@ -28,9 +28,11 @@
   transition: ease 0.3s;
 }
 .charImg:hover {
-  width: 250px;
+  width: 190px;
   transition: ease 0.3s;
   border-radius: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 .pagination {
   display: flex;
@@ -38,8 +40,12 @@
   width: 100%;
   margin-top: 55px;
 }
-.loadingSection{
+.loadingSection {
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.titleWrapper {
   display: flex;
   justify-content: center;
 }
