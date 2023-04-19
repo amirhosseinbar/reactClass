@@ -12,14 +12,21 @@ export default function RickAndMorty() {
   const [search, setSearch] = useState("");
   const [error, setError] = useState({ code: 200, text: "" });
   const [pageNumber, setPageNumber] = useState(0);
+  const [paginationCount, setPaginationCount] = useState(1);
+
+  useEffect(() => {
+    axios.get("https://rickandmortyapi.com/api/character").then((res) => {
+      setPaginationCount(res.data.info.pages);
+    });
+  }, []);
 
   useEffect(
     function () {
-      console.log("search");
       setLoading(true);
       axios
         .get("https://rickandmortyapi.com/api/character?name=" + search)
         .then((res) => {
+          setPaginationCount(res.data.info.pages);
           setData(res.data.results);
           setError({ code: 200, text: "" });
         })
@@ -31,18 +38,17 @@ export default function RickAndMorty() {
         })
         .finally(() => {
           setLoading(false);
-
         });
     },
     [search]
   );
   useEffect(
     function () {
-      console.log("pageNumber", pageNumber);
       setLoading(true);
       axios
         .get("https://rickandmortyapi.com/api/character/?page=" + pageNumber)
         .then((res) => {
+          setPaginationCount(res.data.info.pages);
           setData(res.data.results);
           setError({ code: 200, text: "" });
         })
@@ -80,13 +86,7 @@ export default function RickAndMorty() {
       <div className={style.charWrapper}>
         {error.code === 200
           ? data.map((char) => (
-              <div
-                key={char.id}
-                className={style.charCard}
-                onClick={() => {
-                  alert(char.name);
-                }}
-              >
+              <div key={char.id} className={style.charCard}>
                 <img
                   src={char.image}
                   alt={char.name}
@@ -97,9 +97,9 @@ export default function RickAndMorty() {
             ))
           : error.text}
         <div className={style.pagination}>
-          <Stack spacing={2}>
+          <Stack spacing={paginationCount}>
             <Pagination
-              count={42}
+              count={paginationCount}
               variant="outlined"
               color="primary"
               onChange={(e, page) => {
